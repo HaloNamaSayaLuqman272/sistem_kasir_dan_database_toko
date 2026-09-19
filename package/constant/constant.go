@@ -1,0 +1,39 @@
+package constant
+
+const PORT = "PORT"
+
+const API_V1_PREFIX = "/api/v1"
+
+const (
+	DB_HOST     = "DB_HOST"
+	DB_PORT     = "DB_PORT"
+	DB_USERNAME = "DB_USERNAME"
+	DB_PASSWORD = "DB_PASSWORD"
+	DB_NAME     = "DB_NAME"
+)
+
+const (
+	JWT_SECRET_KEY      = "JWT_SECRET_KEY"
+	JWT_EXPIRE_DURATION = "JWT_EXPIRE_DURATION"
+)
+
+const (
+	ADMIN_USERNAME     = "ADMIN_USERNAME"
+	ADMIN_EMAIL        = "ADMIN_EMAIL"
+	ADMIN_PASSWORD     = "ADMIN_PASSWORD"
+	ADMIN_PHONE_NUMBER = "ADMIN_PHONE_NUMBER"
+	ADMIN_ADDRESS      = "ADMIN_ADDRESS"
+	ADMIN_PROVINCE_ID  = "ADMIN_PROVINCE_ID"
+	ADMIN_CITY_ID      = "ADMIN_CITY_ID"
+	ADMIN_DISTRICT_ID  = "ADMIN_DISTRICT_ID"
+)
+
+const CLOUDINARY_URL = "CLOUDINARY_URL"
+
+var ALLOWED_EXTENSIONS map[string]bool = map[string]bool{
+	".png":  true,
+	".jpg":  true,
+	".jpeg": true,
+	".avif": true,
+	".webp": true,
+}
