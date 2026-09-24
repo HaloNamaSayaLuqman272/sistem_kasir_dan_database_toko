@@ -4,6 +4,7 @@ go 1.26.3
 
 require (
 	github.com/cloudinary/cloudinary-go/v2 v2.16.0
+	github.com/golang-jwt/jwt/v5 v5.3.1
 	github.com/google/uuid v1.5.0
 	github.com/spf13/viper v1.21.0
 	golang.org/x/crypto v0.57.0
@@ -15,7 +16,6 @@ require (
 	github.com/creasty/defaults v1.7.0 // indirect
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/go-viper/mapstructure/v2 v2.4.0 // indirect
-	github.com/golang-jwt/jwt/v5 v5.3.1 // indirect
 	github.com/gorilla/schema v1.4.1 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761 // indirect
