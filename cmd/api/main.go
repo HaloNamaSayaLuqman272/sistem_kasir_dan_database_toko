@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"sistem_kasir_dan_database_toko/api"
 	"sistem_kasir_dan_database_toko/api/middlewares"
 	"sistem_kasir_dan_database_toko/database/drivers"
 	"sistem_kasir_dan_database_toko/package/constant"
@@ -36,7 +38,13 @@ func main() {
 	var (
 		repository = dbConfig.InitDB()
 		cloudinary = clurdinaryConfig.InitCloudinary()
+		e          = api.NewEcho(repository, cloudinary, jwtConfig)
 	)
 
 	drivers.MigrateDB(repository)
+
+	appPort := fmt.Sprintf("%s", utils.GetConfigurance(constant.PORT))
+	if err := e.Start(":" + appPort); err != nil {
+		e.Logger.Error("failed to start server", "error", err)
+	}
 }
