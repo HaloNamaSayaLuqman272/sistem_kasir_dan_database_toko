@@ -14,8 +14,8 @@ type updatecategory struct {
 
 func (u updatecategory) UpdateCategoryByID(ctx context.Context, updateCategoryRequest *CataegoryRequest, id uint) (Category, error) {
 	category := models.Category{
-		Name:        updateCategoryRequest.Name,
-		Description: updateCategoryRequest.Description,
+		NameCategory: updateCategoryRequest.NameCategory,
+		Description:  updateCategoryRequest.Description,
 	}
 	if err := u.repository.WithContext(ctx).Where("id = ?", id).Updates(&category).Error; err != nil {
 		return Category{}, err

@@ -13,8 +13,8 @@ type create struct {
 
 func (c create) CreateCategory(ctx context.Context, createCategoryRequest *CataegoryRequest) (Category, error) {
 	category := models.Category{
-		Name:        createCategoryRequest.Name,
-		Description: createCategoryRequest.Description,
+		NameCategory: createCategoryRequest.NameCategory,
+		Description:  createCategoryRequest.Description,
 	}
 	result := c.repository.WithContext(ctx).Create(&category)
 	record := new(Category)
