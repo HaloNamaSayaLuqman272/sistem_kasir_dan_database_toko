@@ -134,11 +134,6 @@ func (p Products) GetProductRecommendation(ctx *echo.Context) error {
 	limit, _ := strconv.Atoi(ctx.QueryParam("limit"))
 	pagination := utils.Pagination{Page: page, Limit: limit}
 
-	// req := ai.ProductRecommendationRequest{
-	// 	Quantity: recommendationReq.Quantity,
-	// 	Topic:    recommendationReq.Topic,
-	// }
-
 	res, err := p.products.GetProductsByRecommendation(ctx.Request().Context(), pagination, *recommendationReq)
 	if err != nil {
 		log.Println("DEBUG get recommendation error:", err)
@@ -147,16 +142,6 @@ func (p Products) GetProductRecommendation(ctx *echo.Context) error {
 			Message: "get recommendation failed",
 		})
 	}
-
-	// resBody := res.Choices[0].Message.Content
-	// var recommendations []ai.ProductRecommendationResponse
-	// err = json.Unmarshal([]byte(resBody), (&recommendations))
-	// if err != nil {
-	// 	return ctx.JSON(http.StatusInternalServerError, dtos.Response[any]{
-	// 		Status:  "failed",
-	// 		Message: "get recommendation failed",
-	// 	})
-	// }
 
 	return ctx.JSON(http.StatusOK, dtos.Response[utils.Pagination]{
 		Status:  "success",
