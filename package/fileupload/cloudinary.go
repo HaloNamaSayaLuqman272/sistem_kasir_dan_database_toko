@@ -32,7 +32,7 @@ func (c *CloudinaryConfig) InitCloudinary() *cloudinary.Cloudinary {
 	return cld
 }
 
-func (c *CloudinaryUploader) FileUpload(ctx context.Context, file any) (string, error) {
+func (c *CloudinaryUploader) UploadFile(ctx context.Context, file any) (string, error) {
 	resp, err := c.Cld.Upload.Upload(ctx, file, c.Options)
 	if err != nil {
 		return "", err
