@@ -28,7 +28,11 @@ const (
 	ADMIN_DISTRICT_ID  = "ADMIN_DISTRICT_ID"
 )
 
-const CLOUDINARY_URL = "CLOUDINARY_URL"
+const (
+	CLOUDINARY_URL = "CLOUDINARY_URL"
+	AI_API_KEY     = "AI_API_KEY"
+	AI_MODEL       = "AI_MODEL"
+)
 
 var ALLOWED_EXTENSIONS map[string]bool = map[string]bool{
 	".png":  true,
