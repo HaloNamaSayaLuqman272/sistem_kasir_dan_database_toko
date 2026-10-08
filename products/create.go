@@ -13,7 +13,7 @@ type create struct {
 
 func (c create) CreateProduct(ctx context.Context, createProductRequest *ProductRequest) (Product, error) {
 	product := models.Product{
-		NameProduct: createProductRequest.NameProduct,
+		ProductName: createProductRequest.ProductName,
 		CategoryID:  createProductRequest.CategoryID,
 		Description: createProductRequest.Description,
 		Company:     createProductRequest.Company,

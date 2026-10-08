@@ -29,7 +29,7 @@ func (g getbyrecommendation) GetProductsByRecommendation(ctx context.Context, pa
 	for i, p := range allProducts {
 		aiProducts[i] = ai.Product{
 			ID:          p.ID,
-			NameProduct: p.NameProduct,
+			NameProduct: p.ProductName,
 			Description: p.Description,
 			CategoryID:  p.CategoryID,
 			Price:       p.Price,

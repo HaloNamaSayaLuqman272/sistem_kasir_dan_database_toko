@@ -14,7 +14,7 @@ type update struct {
 
 func (u update) UpdateProductByID(ctx context.Context, updateProductRequest *ProductRequest, id uint) (Product, error) {
 	product := models.Product{
-		NameProduct: updateProductRequest.NameProduct,
+		ProductName: updateProductRequest.ProductName,
 		CategoryID:  updateProductRequest.CategoryID,
 		Description: updateProductRequest.Description,
 		Company:     updateProductRequest.Company,

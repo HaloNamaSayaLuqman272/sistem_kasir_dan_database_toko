@@ -10,7 +10,7 @@ import (
 
 type Product struct {
 	ID          uint                `json:"id" gorm:"primaryKey"`
-	NameProduct string              `json:"name_product"`
+	ProductName string              `json:"product_name"`
 	CategoryID  uint                `json:"category_id"`
 	Category    categories.Category `json:"category"`
 	Description string              `json:"description"`
@@ -27,7 +27,7 @@ type Product struct {
 }
 
 type ProductRequest struct {
-	NameProduct string  `form:"name_product" validate:"required"`
+	ProductName string  `form:"product_name" validate:"required"`
 	CategoryID  uint    `form:"category_id" validate:"required"`
 	Description string  `form:"description" validate:"required"`
 	Company     string  `form:"company" validate:"required"`
